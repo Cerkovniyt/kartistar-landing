@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* Не забудь заменить 'bot-icon.svg' на имя файла твоей иконки или картинки */
+    background-image: url('bot-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px;
+    background-color: #0b0f19;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #f8fafc;
+}
+
+/* Затемняющий оверлей для читаемости */
+.glass-container {
+    background: rgba(11, 15, 25, 0.85);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Главная карточка с эффектом матового стекла */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 2.5rem;
+    text-align: center;
+    max-width: 540px;
+    width: 100%;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    animation: scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Шапка */
+.card-header .logo {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-header h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+    margin-bottom: 2rem;
+}
+
+/* Прайс-сетка */
+.pricing {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.price-box {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    padding: 1.2rem 0.8rem;
+    border-radius: 16px;
+    flex: 1;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.price-box:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+    background: rgba(56, 189, 248, 0.05);
+}
+
+.price-box h3 {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin: 0 0 0.5rem 0;
+    font-weight: 500;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin: 0;
+}
+
+/* Выделенный товар (Хит) */
+.price-box.highlight {
+    border-color: rgba(129, 140, 248, 0.4);
+    background: rgba(129, 140, 248, 0.08);
+}
+
+.price-box.highlight .price {
+    color: #c7d2fe;
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 12px;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+/* Блок преимуществ */
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Главная кнопка */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #0284c7, #2563eb);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+    background: linear-gradient(135deg, #0369a1, #1d4ed8);
+}
+
+/* Подвал */
+footer {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* Стили для блока с QR-кодом */
+.qr-section {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    padding: 6px;
+    background: #ffffff;
+    /* Белая подложка, чтобы QR-код легко читался */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.qr-img:hover {
+    transform: scale(1.05);
+}
+
+.qr-text {
+    margin: 0.6rem 0 0 0;
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
