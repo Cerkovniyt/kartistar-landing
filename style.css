@@ -1,0 +1,150 @@
+/* 1. Базовые настройки страницы */
+body {
+    /* Твоя иконка бота в качестве фона */
+    background-image: url('bot-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+    /* Размер иконки по вкусу */
+    background-color: #0f172a;
+    /* Запасной цвет фона */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Чуть более современный шрифт */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    /* Чтобы иконка не скроллилась */
+}
+
+/* 2. Полупрозрачный оверлей (черный фон) */
+.glass-container {
+    background-color: rgba(0, 0, 0, 0.75);
+    /* Черный с прозрачностью */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3. Сама карточка с эффектом СТЕКЛА */
+.card {
+    /* Магия Glassmorphism */
+    background: rgba(255, 255, 255, 0.05);
+    /* Очень легкий белый фон */
+    backdrop-filter: blur(20px);
+    /* Размытие того, что под карточкой (иконки) */
+    -webkit-backdrop-filter: blur(20px);
+    /* Для Safari */
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Тонкая светлая рамка */
+    border-radius: 24px;
+    /* Более скругленные углы */
+    padding: 3rem;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    /* Глубокая тень */
+    animation: fadeIn 0.5s ease-in;
+    /* Легкое появление */
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 4. Типографика */
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    /* Градиент на заголовок */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main p {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    margin-bottom: 2rem;
+}
+
+/* 5. Блок цен (стили остаются похожими, но адаптируются под стекло) */
+.pricing {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.price-box {
+    background: rgba(0, 0, 0, 0.3);
+    /* Затемненные боксы цен */
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.price-box:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+    background: rgba(56, 189, 248, 0.05);
+}
+
+.price-box h3 {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #f8fafc;
+}
+
+.price-box.highlight {
+    border-color: #818cf8;
+    background: rgba(129, 140, 248, 0.1);
+}
+
+.price-box.highlight .price {
+    color: #a5b4fc;
+}
+
+/* 6. Кнопка */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    /* Градиент на кнопку */
+    background: linear-gradient(90deg, #0ea5e9, #2563eb);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    /* Круглая кнопка */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+    background: linear-gradient(90deg, #0284c7, #1d4ed8);
+}
